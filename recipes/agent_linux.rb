@@ -31,7 +31,7 @@ autoregister_key        = node['gocd']['agent']['auto_register_key']
 server_search_query     = node['gocd']['agent']['server_search_query']
 
 package "go-agent" do
-  version node['gocd']['version']
+  version node['gocd']['version'].split('-')[0]
   options package_options
 end
 
