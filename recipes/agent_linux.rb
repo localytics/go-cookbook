@@ -6,9 +6,8 @@ when 'debian'
   include_recipe 'apt'
 
   apt_repository 'thoughtworks' do
-    uri 'http://dl.bintray.com/gocd/gocd-deb/'
-    keyserver "pgp.mit.edu"
-    key "0x9149B0A6173454C7"
+    uri 'https://download.go.cd/'
+    key 'https://download.go.cd/GOCD-GPG-KEY.asc'
     components ['/']
   end
 
@@ -17,8 +16,8 @@ when 'rhel','fedora'
   include_recipe 'yum'
 
   yum_repository 'thoughtworks' do
-    baseurl 'http://dl.bintray.com/gocd/gocd-rpm/'
-    gpgcheck false
+    baseurl 'https://download.go.cd/'
+    gpgkey 'https://download.go.cd/GOCD-GPG-KEY.asc'
   end
 end
 
